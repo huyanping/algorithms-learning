@@ -1,9 +1,8 @@
 package cn.huyanping.algorithms.unit01;
 
-import java.util.LinkedList;
 
 /**
- * Created by lenovo on 2016/7/8.
+ * Created by Jenner on 2016/7/8.
  */
 public class InsertionSort {
     public static void sort(int[] unsorted) {
