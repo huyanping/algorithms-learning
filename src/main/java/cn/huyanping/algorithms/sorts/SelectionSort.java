@@ -8,8 +8,10 @@ public class SelectionSort {
     public static void sort(int[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
             int key = i;
-            for (int j = 1; j < unsorted.length; j++) {
-                if (unsorted[j] < unsorted[i]) {
+            int value = unsorted[i];
+            for (int j = i + 1; j < unsorted.length; j++) {
+                if (unsorted[j] < value) {
+                    value = unsorted[j];
                     key = j;
                 }
             }
@@ -18,14 +20,6 @@ public class SelectionSort {
                 unsorted[i] = unsorted[key];
                 unsorted[key] = temp;
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] unsorted = {3, 2, 4, 5, 1, 6, 9};
-        InsertionSort.sort(unsorted);
-        for (int i = 0; i < unsorted.length; i++) {
-            System.out.println(unsorted[i]);
         }
     }
 }
