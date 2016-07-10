@@ -1,4 +1,4 @@
-package cn.huyanping.algorithms.unit01;
+package cn.huyanping.algorithms.sorts;
 
 /**
  * Created by Jenner on 2016/7/10.
