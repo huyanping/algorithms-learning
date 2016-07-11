@@ -38,14 +38,15 @@ public class SortTest {
             return cache;
         }
 
-        Object[][] result = new Object[depth][2];
+        Object[][] result = new Object[depth / step - 1][2];
+        int key = 0;
         for (int i = step; i < depth; i += step) {
             int size = i * i;
             int[] unsorted = createRandomArray(size);
             int[] sorted = unsorted.clone();
             sort(sorted);
-            result[i][0] = unsorted;
-            result[i][1] = sorted;
+            result[key][0] = unsorted;
+            result[key++][1] = sorted;
         }
         cache = result;
 
