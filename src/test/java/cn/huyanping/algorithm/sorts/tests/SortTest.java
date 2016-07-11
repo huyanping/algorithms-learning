@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(DataProviderRunner.class)
 public class SortTest {
+    protected static final int step = 20;
     protected static final int depth = 200;
     protected static Object[][] cache;
 
@@ -36,9 +37,9 @@ public class SortTest {
         if (cache != null) {
             return cache;
         }
-        int count = depth;
-        Object[][] result = new Object[count][2];
-        for (int i = 0; i < count; i++) {
+
+        Object[][] result = new Object[depth][2];
+        for (int i = 0; i < depth; i+=step) {
             int size = (i + 1) * (i+1);
             int[] unsorted = createRandomArray(size);
             int[] sorted = unsorted.clone();
