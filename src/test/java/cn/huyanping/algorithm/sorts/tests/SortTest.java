@@ -1,5 +1,6 @@
 package cn.huyanping.algorithm.sorts.tests;
 
+import cn.huyanping.algorithms.sorts.BubbleSort;
 import cn.huyanping.algorithms.sorts.InsertionSort;
 import cn.huyanping.algorithms.sorts.MergeSort;
 import cn.huyanping.algorithms.sorts.SelectionSort;
@@ -76,6 +77,14 @@ public class SortTest {
     public void testMerge(int[] unsorted, int[] sorted) {
         int[] clone = unsorted.clone();
         MergeSort.sort(clone);
+        Assert.assertArrayEquals(clone, sorted);
+    }
+
+    @Test
+    @UseDataProvider("dataProvider")
+    public void testBubble(int[] unsorted, int[] sorted) {
+        int[] clone = unsorted.clone();
+        BubbleSort.sort(clone);
         Assert.assertArrayEquals(clone, sorted);
     }
 }
