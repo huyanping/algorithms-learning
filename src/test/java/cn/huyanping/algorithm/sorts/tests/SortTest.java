@@ -1,6 +1,7 @@
 package cn.huyanping.algorithm.sorts.tests;
 
 import cn.huyanping.algorithms.sorts.InsertionSort;
+import cn.huyanping.algorithms.sorts.MergeSort;
 import cn.huyanping.algorithms.sorts.SelectionSort;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
@@ -14,7 +15,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(DataProviderRunner.class)
 public class SortTest {
-
     protected static final int depth = 200;
     protected static Object[][] cache;
 
@@ -64,6 +64,14 @@ public class SortTest {
     public void testSelection(int[] unsorted, int[] sorted) {
         int[] clone = unsorted.clone();
         SelectionSort.sort(clone);
+        Assert.assertArrayEquals(clone, sorted);
+    }
+
+    @Test
+    @UseDataProvider("dataProvider")
+    public void testMerge(int[] unsorted, int[] sorted) {
+        int[] clone = unsorted.clone();
+        MergeSort.sort(clone);
         Assert.assertArrayEquals(clone, sorted);
     }
 }
