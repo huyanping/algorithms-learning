@@ -8,15 +8,15 @@ public class InsertionSort {
     public static void sort(int[] unsorted) {
         for(int i=1; i<unsorted.length; i++) {
             if(unsorted[i - 1] > unsorted[i]) {
-                // ¼ÇÂ¼µ±Ç°Öµ
+                // è®°å½•å½“å‰å€¼
                 int temp = unsorted[i];
                 int j = i;
-                // ÕÒ³ö×ó±ßµÚÒ»¸öĞ¡ÓÚµ±Ç°ÖµµÄÎ»ÖÃj£¬²¢½«Ê£ÓàÔªËØÏòÓÒÒÆ¶¯
+                // æ‰¾å‡ºå·¦è¾¹ç¬¬ä¸€ä¸ªå°äºå½“å‰å€¼çš„ä½ç½®jï¼Œå¹¶å°†å‰©ä½™å…ƒç´ å‘å³ç§»åŠ¨
                 while (j >0 && unsorted[j -1] > temp) {
                     unsorted[j] = unsorted[j-1];
                     j--;
                 }
-                //½«µ±Ç°Öµ¸³¸øjÎ»ÖÃ
+                //å°†å½“å‰å€¼èµ‹ç»™jä½ç½®
                 unsorted[j] = temp;
             }
         }

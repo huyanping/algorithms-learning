@@ -1,4 +1,4 @@
-算法学习
-===========
+Algorithms study note
+=====================
 
-算法导论代码笔记
+learning how to create algorithms, not just learning algorithms.

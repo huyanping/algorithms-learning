@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 @RunWith(DataProviderRunner.class)
 public class SortTest {
 
-    protected static final int depth = 5;
+    protected static final int depth = 200;
     protected static Object[][] cache;
 
     protected static int[] createRandomArray(int size) {
@@ -39,7 +39,7 @@ public class SortTest {
         int count = depth;
         Object[][] result = new Object[count][2];
         for (int i = 0; i < count; i++) {
-            int size = (i + 1) * 10;
+            int size = (i + 1) * (i+1);
             int[] unsorted = createRandomArray(size);
             int[] sorted = unsorted.clone();
             sort(sorted);
@@ -54,14 +54,16 @@ public class SortTest {
     @Test
     @UseDataProvider("dataProvider")
     public void testInsertion(int[] unsorted, int[] sorted) {
-        InsertionSort.sort(unsorted);
-        Assert.assertArrayEquals(unsorted, sorted);
+        int[] clone = unsorted.clone();
+        InsertionSort.sort(clone);
+        Assert.assertArrayEquals(clone, sorted);
     }
 
     @Test
     @UseDataProvider("dataProvider")
     public void testSelection(int[] unsorted, int[] sorted) {
-        SelectionSort.sort(unsorted);
-        Assert.assertArrayEquals(unsorted, sorted);
+        int[] clone = unsorted.clone();
+        SelectionSort.sort(clone);
+        Assert.assertArrayEquals(clone, sorted);
     }
 }

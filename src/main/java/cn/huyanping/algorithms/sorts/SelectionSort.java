@@ -15,11 +15,10 @@ public class SelectionSort {
                     key = j;
                 }
             }
-            if (key != i) {
-                int temp = unsorted[i];
-                unsorted[i] = unsorted[key];
-                unsorted[key] = temp;
-            }
+            int temp = unsorted[i];
+            unsorted[i] = unsorted[key];
+            unsorted[key] = temp;
+
         }
     }
 }
