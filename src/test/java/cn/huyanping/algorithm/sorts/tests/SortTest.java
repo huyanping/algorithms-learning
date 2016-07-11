@@ -39,8 +39,8 @@ public class SortTest {
         }
 
         Object[][] result = new Object[depth][2];
-        for (int i = 0; i < depth; i+=step) {
-            int size = (i + 1) * (i+1);
+        for (int i = step; i < depth; i += step) {
+            int size = i * i;
             int[] unsorted = createRandomArray(size);
             int[] sorted = unsorted.clone();
             sort(sorted);
