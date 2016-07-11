@@ -10,6 +10,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Arrays;
+
 /**
  * Created by lenovo on 2016/7/10.
  */
@@ -29,7 +31,7 @@ public class SortTest {
     }
 
     protected static void sort(int[] unsorted) {
-        InsertionSort.sort(unsorted);
+        Arrays.sort(unsorted);
     }
 
     @DataProvider
