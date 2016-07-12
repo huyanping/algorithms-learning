@@ -18,8 +18,8 @@ import java.util.Arrays;
  */
 @RunWith(DataProviderRunner.class)
 public class SortTest {
-    protected static final int step = 20;
-    protected static final int depth = 200;
+    protected static final int step = 40;
+    protected static final int depth = 400;
     protected static Object[][] cache;
 
     protected static int[] createRandomArray(int size) {
